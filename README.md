@@ -4,13 +4,13 @@ This repository contains resources and documentation for creating a continuous d
 
 ## Overview
 
-Learn how to build an automated continuous delivery pipeline that deploys your applications to AWS using AWS CodePipeline, AWS CodeBuild, and AWS CodeDeploy.
+Learn how to build an automated continuous delivery pipeline that deploys your applications to AWS using AWS CodePipeline, AWS CodeBuild, and AWS CodeDeploy. AWS Elastic Beanstalk
 
 ## Architecture
 ![alt text](image.png)
 
 The pipeline includes:
-- **Source Stage**: AWS CodeCommit repository
+- **Source Stage**: GitHub repository
 - **Build Stage**: AWS CodeBuild for compilation and testing
 - **Deploy Stage**: AWS CodeDeploy for application deployment
 
@@ -23,26 +23,32 @@ The pipeline includes:
 ## Services Used
 
 - **AWS CodePipeline**: Orchestrates the continuous delivery workflow
-- **AWS CodeCommit**: Source control repository
+- **GitHub**: Source control repository
 - **AWS CodeBuild**: Builds and tests the application
 - **AWS CodeDeploy**: Deploys applications to EC2 instances
-- **Amazon EC2**: Hosts the deployed application
+- **AWS Elastic Beanstalk**: Hosts the deployed application
 - **AWS IAM**: Manages permissions and roles
 
 ## Getting Started
 
-1. **Create CodeCommit Repository**
+1. **Create GitHub Repository**
    ```bash
-   aws codecommit create-repository --repository-name my-demo-repo
+   gh repo create aws-elastic-beanstalk-express-js-sample --public --clone
    ```
 
-2. **Set up EC2 Instance**
-   - Launch EC2 instance with CodeDeploy agent
-   - Configure IAM role for EC2
+2. **AWS Elastic Beanstalk**
+   - Configure & create elastic beanstalk environment
+   - Deploy sample web app to elastic beanstalk
+   - Test the sample web app
+![alt text](dev-env.png)
+![alt text](elb.png)
+![alt text](<current arc.png>)
 
-3. **Create CodeDeploy Application**
+3. **Create build project**
    ```bash
-   aws deploy create-application --application-name my-demo-application
+   Create build with CodeBuild
+   Setup Github as source provider for build 
+   Run build on AWS CodeBuild
    ```
 
 4. **Build CodePipeline**
