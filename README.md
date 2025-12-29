@@ -7,7 +7,7 @@ This repository contains resources and documentation for creating a continuous d
 Learn how to build an automated continuous delivery pipeline that deploys your applications to AWS using AWS CodePipeline, AWS CodeBuild, and AWS CodeDeploy. AWS Elastic Beanstalk
 
 ## Architecture
-![alt text](image.png)
+![alt text](images/image.png)
 
 The pipeline includes:
 - **Source Stage**: GitHub repository
@@ -35,14 +35,17 @@ The pipeline includes:
    ```bash
    gh repo create aws-elastic-beanstalk-express-js-sample --public --clone
    ```
+   A repository for your code so it can be easily accessed over the Internet
 
 2. **AWS Elastic Beanstalk**
    - Configure & create elastic beanstalk environment
    - Deploy sample web app to elastic beanstalk
    - Test the sample web app
-![alt text](dev-env.png)
-![alt text](elb.png)
-![alt text](<current arc.png>)
+![alt text](images/dev-env.png)
+![alt text](images/elb.png)
+![alt text](<images/current arc.png>)
+
+ A compute service that makes it easy to deploy and manage applications on AWS without having to worry about the infrastructure that runs them.
 
 3. **Create build project**
    ```bash
@@ -51,14 +54,17 @@ The pipeline includes:
    Run build on AWS CodeBuild
    ```
 
-4. **Build CodePipeline**
-   - Configure source stage (CodeCommit)
+4. **Code Build**
+   - Configure source stage (GitHub)
    - Set up build stage (CodeBuild)
    - Configure deploy stage (CodeDeploy)
+   ![alt text](images/codebuild.png)
+   ![alt text](images/codebuild-arc.png)
+   
 
 ## Key Files
 
-- `buildspec.yml`: Build specification for CodeBuild
+- `buildspec.yml`: Build specification for CodeBuild (Tutorial link)
 - `appspec.yml`: Deployment specification for CodeDeploy
 - Application source code
 
@@ -70,12 +76,20 @@ The pipeline includes:
 - Consistent deployments
 - Easy rollback capabilities
 
+ AWS CodeBuild is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy.
+
+
 ## Next Steps
 
-- Add automated testing stages
-- Implement blue/green deployments
-- Set up monitoring and notifications
-- Integrate with additional AWS services
+**Build CodePipeline**
+
+- Set up a continuous delivery pipeline on AWS CodePipeline
+- Configure a source stage using your GitHub repo
+- Configure a build stage using AWS CodeBuild
+- Configure a deploy stage using your AWS Elastic Beanstalk application
+- Deploy the application hosted on GitHub to Elastic Beanstalk through a pipeline
+
+ The pipeline will detect changes in the code stored in your GitHub repository, build the source code using AWS CodeBuild, and then deploy your application to AWS Elastic Beanstalk.
 
 ## Resources
 
