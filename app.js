@@ -45,28 +45,49 @@ app.get('/', (req, res) => {
           text-align: center;
         }
         .title {
-          font-size: 4em;
-          background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
-          background-size: 300% 300%;
+          font-size: 5em;
+          background: linear-gradient(45deg, #ff0080, #00ff80, #8000ff, #ff8000, #0080ff);
+          background-size: 400% 400%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          animation: rainbow 3s ease-in-out infinite;
-          margin-bottom: 20px;
-          text-shadow: 0 0 30px rgba(255,255,255,0.5);
+          animation: rainbow 2s ease-in-out infinite, bounce 3s ease-in-out infinite, rotate 10s linear infinite;
+          margin-bottom: 30px;
+          text-shadow: 0 0 50px rgba(255,255,255,0.8);
+          transform-origin: center;
         }
         @keyframes rainbow {
           0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
+          25% { background-position: 100% 50%; }
+          50% { background-position: 100% 100%; }
+          75% { background-position: 0% 100%; }
           100% { background-position: 0% 50%; }
+        }
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(-20px) scale(1.1); }
+        }
+        @keyframes rotate {
+          0% { transform: rotateY(0deg); }
+          100% { transform: rotateY(360deg); }
         }
         .subtitle {
           color: #00ff88;
-          font-size: 1.8em;
+          font-size: 2.2em;
           margin-bottom: 30px;
-          animation: typewriter 4s steps(40) 1s both;
+          animation: typewriter 4s steps(40) 1s both, neonGlow 2s ease-in-out infinite alternate;
           border-right: 3px solid #00ff88;
           white-space: nowrap;
           overflow: hidden;
+        }
+        @keyframes neonGlow {
+          from { 
+            text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88;
+            color: #00ff88;
+          }
+          to { 
+            text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88, 0 0 40px #00ff88, 0 0 50px #00ff88;
+            color: #66ffaa;
+          }
         }
         @keyframes typewriter {
           from { width: 0; }
@@ -83,11 +104,20 @@ app.get('/', (req, res) => {
           border-radius: 15px;
           padding: 20px;
           backdrop-filter: blur(10px);
-          transition: transform 0.3s ease;
+          transition: all 0.3s ease;
+          animation: float 4s ease-in-out infinite;
         }
+        .stat-box:nth-child(1) { animation-delay: 0s; }
+        .stat-box:nth-child(2) { animation-delay: 1.3s; }
+        .stat-box:nth-child(3) { animation-delay: 2.6s; }
         .stat-box:hover {
-          transform: translateY(-10px) scale(1.05);
-          box-shadow: 0 20px 40px rgba(0,255,136,0.3);
+          transform: translateY(-20px) scale(1.15) rotateZ(5deg);
+          box-shadow: 0 30px 60px rgba(0,255,136,0.5);
+          border-color: #ff6b6b;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+          50% { transform: translateY(-15px) rotateZ(2deg); }
         }
         .stat-number {
           font-size: 2.5em;
@@ -101,33 +131,46 @@ app.get('/', (req, res) => {
         }
         .pulse-btn {
           margin-top: 40px;
-          padding: 15px 30px;
-          background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+          padding: 20px 40px;
+          background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #ff6b6b);
+          background-size: 200% 200%;
           border: none;
           border-radius: 50px;
           color: white;
-          font-size: 1.3em;
+          font-size: 1.5em;
           font-weight: bold;
           cursor: pointer;
-          animation: pulse 2s infinite;
+          animation: pulse 1.5s infinite, wiggle 3s ease-in-out infinite, bgShift 2s ease-in-out infinite;
           transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
         }
         .pulse-btn:hover {
-          transform: scale(1.1);
-          box-shadow: 0 0 30px rgba(255,107,107,0.6);
+          transform: scale(1.2) rotateZ(-5deg);
+          box-shadow: 0 0 50px rgba(255,107,107,0.8), 0 0 100px rgba(76,236,196,0.6);
         }
         @keyframes pulse {
-          0% { box-shadow: 0 0 0 0 rgba(255,107,107,0.7); }
-          70% { box-shadow: 0 0 0 20px rgba(255,107,107,0); }
+          0% { box-shadow: 0 0 0 0 rgba(255,107,107,0.9); }
+          70% { box-shadow: 0 0 0 30px rgba(255,107,107,0); }
           100% { box-shadow: 0 0 0 0 rgba(255,107,107,0); }
+        }
+        @keyframes wiggle {
+          0%, 100% { transform: rotateZ(0deg); }
+          25% { transform: rotateZ(2deg); }
+          75% { transform: rotateZ(-2deg); }
+        }
+        @keyframes bgShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
       </style>
     </head>
     <body>
       <div class="stars"></div>
       <div class="container">
-        <h1 class="title">🚀 AWS DEVOPS PIPELINE 🚀</h1>
-        <p class="subtitle">Powered by Elastic Beanstalk & Express.js</p>
+        <h1 class="title">🚀 MEGA AWESOME AWS PIPELINE 🚀</h1>
+        <p class="subtitle">⚡ SUPER POWERED BY ELASTIC BEANSTALK ⚡</p>
         
         <div class="stats">
           <div class="stat-box">
@@ -144,7 +187,7 @@ app.get('/', (req, res) => {
           </div>
         </div>
         
-        <button class="pulse-btn" onclick="celebrate()">🎉 DEPLOY SUCCESS! 🎉</button>
+        <button class="pulse-btn" onclick="celebrate()">🎆 EPIC DEPLOY SUCCESS! 🎆</button>
       </div>
       
       <script>
