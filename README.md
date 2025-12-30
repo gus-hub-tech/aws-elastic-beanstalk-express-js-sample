@@ -103,10 +103,8 @@ The pipeline includes:
 ![alt text](images/review.png)
 ![alt text](images/appjs-customized.png)
 
-
-
-
-
+**EPIC DEPLOYMENT!!!**
+<video controls src="images/epic-vid.mp4" title="Title"></video>
 
 
 
