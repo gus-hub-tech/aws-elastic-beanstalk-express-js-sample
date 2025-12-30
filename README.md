@@ -93,15 +93,26 @@ The pipeline includes:
 ![alt text](images/pipe-results.png)
 
 
-
-
  The pipeline will detect changes in the code stored in your GitHub repository, build the source code using AWS CodeBuild, and then deploy your application to AWS Elastic Beanstalk.
+
+ **Finalize Pipeline and Test-Manual Approval**
+
+- Add a review stage to your pipeline
+- Manually approve a change before it is deployed
+
+
+
+
+
+
+
+ As part of this process, you can add an approval action to a stage at the point where you want the pipeline execution to stop so someone can manually approve or reject the action
 
 ## Resources
 
 - [AWS CodePipeline Documentation](https://docs.aws.amazon.com/codepipeline/)
 - [AWS CodeBuild Documentation](https://docs.aws.amazon.com/codebuild/)
-- [AWS CodeDeploy Documentation](https://docs.aws.amazon.com/codedeploy/)
+
 
 # AWS Elastic Beanstalk Node.js Sample App
 
