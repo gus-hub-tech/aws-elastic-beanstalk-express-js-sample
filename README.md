@@ -100,6 +100,10 @@ The pipeline includes:
 - Add a review stage to your pipeline
 - Manually approve a change before it is deployed
 
+![alt text](images/review.png)
+![alt text](images/appjs-customized.png)
+
+
 
 
 
