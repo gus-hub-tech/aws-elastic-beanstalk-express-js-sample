@@ -104,11 +104,10 @@ The pipeline includes:
 ![alt text](images/appjs-customized.png)
 
 **EPIC DEPLOYMENT!!!**
-<video controls src="images/epic-vid.mp4" title="Title"></video>
 
+https://github.com/user-attachments/assets/05f74019-83a2-4779-a090-e9dbf24e02a6
 
-
- As part of this process, you can add an approval action to a stage at the point where you want the pipeline execution to stop so someone can manually approve or reject the action
+As part of this process, you can add an approval action to a stage at the point where you want the pipeline execution to stop so someone can manually approve or reject the action
 
 ## Resources
 
