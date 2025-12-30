@@ -88,6 +88,12 @@ The pipeline includes:
 - Configure a build stage using AWS CodeBuild
 - Configure a deploy stage using your AWS Elastic Beanstalk application
 - Deploy the application hosted on GitHub to Elastic Beanstalk through a pipeline
+![alt text](images/codepipline.png)
+![alt text](images/piplinecode.png)
+![alt text](images/pipe-results.png)
+
+
+
 
  The pipeline will detect changes in the code stored in your GitHub repository, build the source code using AWS CodeBuild, and then deploy your application to AWS Elastic Beanstalk.
 
